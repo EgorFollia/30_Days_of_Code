@@ -37,8 +37,8 @@ class Student :  public Person
     {
       int avg = 0, sum = 0;
 
-      for (int i = 0; i < testScores.size(); i++)
-        sum += testScores[i];
+      for (auto i : testScores)
+        sum += i;
 
       avg = sum/testScores.size();
       char grade;
