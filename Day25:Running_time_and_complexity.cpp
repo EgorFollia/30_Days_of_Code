@@ -2,6 +2,18 @@
 
 using namespace std;
 
+bool prime(int n)
+{
+  if (n <= 1)
+    return false;
+
+  for (int i = 2; i * i <= n; i++)
+    if (n % i == 0)
+      return false;
+
+  return true;
+}
+
 int main()
 {
   int t = 0;
@@ -9,24 +21,10 @@ int main()
 
   while (t--)
   {
-    bool prime;
-    int n = 0, i = 0;
+    int n = 0;
     cin >> n;
 
-    if (n == 1)
-      cout << "Prime" << endl;
-
-    for (i = 2; i < n; i++)
-    {
-      if (n % i == 0)
-      {
-        cout << "Not prime" << endl;
-        break;
-      }
-    }
-
-    if (n == i)
-      cout << "Prime" << endl;
+    prime(n) ? cout << "Prime" << endl : cout << "Not prime" << endl;
   }
 
   return 0;
